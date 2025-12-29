@@ -239,7 +239,7 @@ header ul a:hover{
   .scroll-down::before {
     top: 30%;
     animation-delay: 0.5s;
-    /* animation: scroll-down 1s ease-in-out infinite; */
+    animation: scroll-down 1s ease-in-out infinite;
   }
   
   @keyframes scroll-down {
@@ -402,7 +402,7 @@ header ul a:hover{
     justify-content: center;
 }
 
-.project-vidbox{
+.project-vidbox img{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -411,19 +411,19 @@ header ul a:hover{
     position: relative;
     cursor: pointer;
     transition: 0.5s;
-    min-width: 400px;
+    min-width: 300px;
 
 }
 
-.project-vidbox video{
+.project-vidbox img {
     object-fit: cover;
-    width: 100%;
+    width: 50%;
     box-shadow: 0 0 10px lightgray;
     border-radius: 20px;
     transition: 0.5s;
 }
 
-.project-card video:hover{
+.project-card img:hover{
     box-shadow: 0 0 25px rgb(255, 255, 255);
 }
 
@@ -809,21 +809,23 @@ header ul a:hover{
     display: none;
 }
 
-
-.sidebar{
-    position: fixed;
-    right: 0;
-    top: 0;
-    bottom: 70%;
-    width: 0%;
-    background-color: #000000b8;
-    z-index: 999;
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.479);
-    backdrop-filter: blur(10px);
-    opacity: 0;
-    border-bottom-left-radius: 100%;
-    
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 90vh;
+  background: #111;
+  transform: translateX(100%);
+  transition: 2s ease;
+  z-index: 1000;
+  
 }
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
 
 .close-icon{
     font-size: 50px;
@@ -877,29 +879,6 @@ header ul a:hover{
 }
 
 /* Sidebar close ANimation */
-
-.sidebar.close-sidebar{
-    animation: closeSideBarAnimation 1.5s forwards;
-}
-
-@keyframes closeSideBarAnimation {
-    from{
-        width: 80%;
-        opacity: 1;
-        bottom: 0;
-        border-radius: 0;
-    }
-    to{
-        width: 0;
-        opacity: 0;
-        bottom: 70%;
-        border-bottom-left-radius: 50%;
-    }
-}
-
-
-
-
 
 
 @media (max-aspect-ratio: 16/9){
